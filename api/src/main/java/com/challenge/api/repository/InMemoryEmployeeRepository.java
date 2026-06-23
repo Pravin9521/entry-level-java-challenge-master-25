@@ -13,78 +13,24 @@ public class InMemoryEmployeeRepository implements EmployeeRepository {
 
     public InMemoryEmployeeRepository() {
 
-        addEmployee(
-                "Rocky",
-                "Singh",
-                25,
-                100000,
-                "rocky.singh@xyz.com",
-                "Software Engineer");
+        addEmployee("Rocky", "Singh", 25, 100000, "rocky.singh@xyz.com", "Software Engineer");
 
-        addEmployee(
-                "Robin",
-                "Green",
-                22,
-                120000,
-                "robin.green@xyz.com",
-                "Associate Software Engineer");
+        addEmployee("Robin", "Green", 22, 120000, "robin.green@xyz.com", "Associate Software Engineer");
 
-        addEmployee(
-                "Rahul",
-                "Sharma",
-                28,
-                150000,
-                "rahul.sharma@xyz.com",
-                "Senior Software Engineer");
+        addEmployee("Rahul", "Sharma", 28, 150000, "rahul.sharma@xyz.com", "Senior Software Engineer");
 
-        addEmployee(
-                "Green",
-                "Arrow",
-                30,
-                180000,
-                "green.arrow@xyz.com",
-                "Tech Lead");
+        addEmployee("Green", "Arrow", 30, 180000, "green.arrow@xyz.com", "Tech Lead");
 
-        addEmployee(
-                "Amit",
-                "Verma",
-                35,
-                250000,
-                "amit.verma@xyz.com",
-                "Engineering Manager");
+        addEmployee("Amit", "Verma", 35, 250000, "amit.verma@xyz.com", "Engineering Manager");
 
-        addEmployee(
-                "Sneha",
-                "Joshi",
-                27,
-                140000,
-                "sneha.joshi@xyz.com",
-                "Backend Developer");
+        addEmployee("Sneha", "Joshi", 27, 140000, "sneha.joshi@xyz.com", "Backend Developer");
 
-        addEmployee(
-                "Vikram",
-                "Rathod",
-                24,
-                110000,
-                "vikram.rathod@xyz.com",
-                "Associate Software Engineer");
+        addEmployee("Vikram", "Rathod", 24, 110000, "vikram.rathod@xyz.com", "Associate Software Engineer");
 
-        addEmployee(
-                "Pooja",
-                "Deshmukh",
-                29,
-                160000,
-                "pooja.deshmukh@xyz.com",
-                "Frontend Developer");
+        addEmployee("Pooja", "Deshmukh", 29, 160000, "pooja.deshmukh@xyz.com", "Frontend Developer");
     }
 
-    private void addEmployee(
-            String firstName,
-            String lastName,
-            int age,
-            int salary,
-            String email,
-            String jobTitle) {
+    private void addEmployee(String firstName, String lastName, int age, int salary, String email, String jobTitle) {
 
         Employee employee = new EmployeeImpl();
 
