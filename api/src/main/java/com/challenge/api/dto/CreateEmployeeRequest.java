@@ -1,12 +1,16 @@
 package com.challenge.api.dto;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 public class CreateEmployeeRequest {
-    private String firstName;
-    private String lastName;
-    private Integer salary;
-    private Integer age;
+    @NotBlank private String firstName;
+    @NotBlank private String lastName;
+    @Positive private Integer salary;
+    @Min(18)  private Integer age;
+    @Email  private String email;
     private String jobTitle;
-    private String email;
 
     public String getFirstName() {
         return firstName;

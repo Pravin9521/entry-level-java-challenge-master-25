@@ -5,6 +5,8 @@ import com.challenge.api.dto.EmployeeResponse;
 import com.challenge.api.service.EmployeeService;
 import java.util.List;
 import java.util.UUID;
+
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,7 +49,7 @@ public class EmployeeController {
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public EmployeeResponse createEmployee(@RequestBody CreateEmployeeRequest request) {
+    public EmployeeResponse createEmployee(@Valid @RequestBody CreateEmployeeRequest request) {
 
         return employeeService.createEmployee(request);
     }
