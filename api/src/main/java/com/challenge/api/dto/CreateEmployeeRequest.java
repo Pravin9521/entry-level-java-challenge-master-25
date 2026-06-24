@@ -5,12 +5,12 @@ import jakarta.validation.constraints.*;
 public class CreateEmployeeRequest {
     @NotBlank
     @Size(max = 50)
-    @Pattern(regexp = "^[a-zA-Z ]+$")
+    @Pattern(regexp = "^[A-Za-z][A-Za-z\\s'-]{1,49}$")
     private String firstName;
 
     @NotBlank
     @Size(max = 50)
-    @Pattern(regexp = "^[a-zA-Z ]+$")
+    @Pattern(regexp = "^[A-Za-z][A-Za-z\\s'-]{1,49}$")
     private String lastName;
 
     @Positive @Max(10000000)
