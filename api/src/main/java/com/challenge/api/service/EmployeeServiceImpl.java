@@ -51,7 +51,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setSalary(request.getSalary());
         employee.setAge(request.getAge());
         employee.setJobTitle(request.getJobTitle());
-        String email = request.getEmail().trim().toLowerCase();
+        String email =
+                request.getEmail() == null ? null : request.getEmail().trim().toLowerCase();
+        if (email != null && employeeRepository.existsByEmail(email)) {
+            throw new IllegalArgumentException("Employee with email " + email + " already exists");
+        }
         employee.setEmail(email);
 
         employee.setContractHireDate(Instant.now());

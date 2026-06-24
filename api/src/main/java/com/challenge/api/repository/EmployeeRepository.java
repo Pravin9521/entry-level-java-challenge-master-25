@@ -12,4 +12,6 @@ public interface EmployeeRepository {
     Optional<Employee> findById(UUID uuid);
 
     Employee save(Employee employee);
+
+    boolean existsByEmail(String email);
 }

@@ -65,4 +65,11 @@ public class InMemoryEmployeeRepository implements EmployeeRepository {
 
         return employee;
     }
+
+    @Override
+    public boolean existsByEmail(String email) {
+        return employees.values().stream()
+                .anyMatch(employee ->
+                        employee.getEmail() != null && employee.getEmail().equalsIgnoreCase(email));
+    }
 }
