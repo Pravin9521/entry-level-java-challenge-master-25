@@ -40,15 +40,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         employee.setUuid(UUID.randomUUID());
 
-        employee.setFirstName(request.getFirstName());
-        employee.setLastName(request.getLastName());
+        String firstName = request.getFirstName().trim();
+        String lastName = request.getLastName().trim();
 
-        employee.setFullName(request.getFirstName() + " " + request.getLastName());
+        employee.setFirstName(firstName);
+        employee.setLastName(lastName);
+
+        employee.setFullName(firstName + " " + lastName);
 
         employee.setSalary(request.getSalary());
         employee.setAge(request.getAge());
         employee.setJobTitle(request.getJobTitle());
-        employee.setEmail(request.getEmail());
+        String email = request.getEmail().trim().toLowerCase();
+        employee.setEmail(email);
 
         employee.setContractHireDate(Instant.now());
 
