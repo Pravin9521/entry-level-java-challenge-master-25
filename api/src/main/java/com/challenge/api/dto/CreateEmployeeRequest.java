@@ -1,25 +1,30 @@
 package com.challenge.api.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 
 public class CreateEmployeeRequest {
     @NotBlank
+    @Size(max = 50)
+    @Pattern(regexp = "^[a-zA-Z ]+$")
     private String firstName;
 
     @NotBlank
+    @Size(max = 50)
+    @Pattern(regexp = "^[a-zA-Z ]+$")
     private String lastName;
 
-    @Positive private Integer salary;
+    @Positive @Max(10000000)
+    private Integer salary;
 
     @Min(18)
+    @Max(100)
     private Integer age;
 
     @Email
+    @Size(max = 255)
     private String email;
 
+    @Size(max = 100)
     private String jobTitle;
 
     public String getFirstName() {
